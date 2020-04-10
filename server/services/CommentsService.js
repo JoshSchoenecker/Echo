@@ -4,26 +4,26 @@ import { BadRequest } from "../utils/Errors";
 class CommentsService {
 
     async getAll(query = {}) {
-        let posts = await dbContext.Posts.find(query);
-        return posts;
+        let comments = await dbContext.Comments.find(query);
+        return comments;
     }
 
     async create(body) {
-        let post = await dbContext.Posts.create(body);
-        return post
+        let comment = await dbContext.Comments.create(body);
+        return comment
     }
 
     async getById(id) {
-        let post = await dbContext.Posts.findById(id);
-        if (!post) {
+        let comment = await dbContext.Comments.findById(id);
+        if (!comment) {
             throw new BadRequest("Invalid Id");
         }
-        return post
+        return comment
     }
 
     async remove(postId) {
-        let post = await dbContext.Posts.findByIdAndDelete(postId)
-        return post
+        let comment = await dbContext.Comments.findByIdAndDelete(postId)
+        return comment
     }
 }
 
