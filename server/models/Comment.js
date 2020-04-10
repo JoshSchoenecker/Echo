@@ -1,10 +1,14 @@
-import mongoose from "mongoose";
+import mongoose, { SchemaTypes } from "mongoose";
+import Username from "./Username";
 const Schema = mongoose.Schema;
+const objectId = Schema.Types.ObjectId
 
-const Comment = new Schema({
-    author: { type: String, required: true },
+const Comment = new Schema(
+    {
+    username: { type: objectId, ref: Username},
     title: { type: String, required: true },
-    description: { type: String, required: true }
-}, { timestamps: true, toJSON: { virtuals: true } });
+    description: { type: String, required: true },
+    post: {type: objectId, ref: "post"}},
+    { timestamps: true, toJSON: { virtuals: true } });
 
 export default Comment;
