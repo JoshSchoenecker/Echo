@@ -3,6 +3,10 @@ import { BadRequest } from "../utils/Errors";
 
 class PostsService {
  
+  async edit(id, body) {
+    let post = await dbContext.Posts.findByIdAndUpdate(id, body, { new: true })
+    return post
+  }
   async getAll(query={}) {
     let posts = await dbContext.Posts.find(query);
     return posts;

@@ -10,7 +10,17 @@ export class PostsController extends BaseController {
       .get("", this.getAll)
       .get("/:postId", this.getById)
       .post("", this.create)
+      .put("/:postId", this.edit)
       .delete("/:postId", this.remove)
+  }
+
+  async edit(req, res, next) {
+    try {
+      let post = await postsService.edit(req.params.postId, req.body)
+      res.send(post)
+    } catch (error) {
+      next(error)
+    }
   }
   async getAll(req, res, next) {
     try {
@@ -50,4 +60,3 @@ export class PostsController extends BaseController {
     }
   }
 }
-
