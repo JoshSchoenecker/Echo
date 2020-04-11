@@ -58,7 +58,6 @@ function _loadState() {
 _loadState();
 
 class Store {
-
   saveState() {
     localStorage.setItem("EchoUser", JSON.stringify(_state.user));
   }
