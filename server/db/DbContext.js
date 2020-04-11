@@ -6,8 +6,7 @@ import mongoose from "mongoose";
 class DbContext {
     Posts = mongoose.model("Post", PostSchema);
     Comments = mongoose.model("Comment", CommentSchema);
-
-    Username = mongoose.model("UserName", UsernameSchema)
+    Usernames = mongoose.model("Username", UsernameSchema)
 }
 
 export const dbContext = new DbContext();

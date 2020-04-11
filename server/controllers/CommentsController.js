@@ -1,4 +1,4 @@
-import express from "express";
+import express, { request } from "express";
 import BaseController from "../utils/BaseController";
 import { commentsService } from "../services/CommentsService";
 import { BadRequest } from "../utils/Errors";
