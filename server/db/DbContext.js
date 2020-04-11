@@ -4,7 +4,7 @@ import UserSchema from "../models/User";
 import mongoose from "mongoose";
 
 class DbContext {
-    Posts = mongoose.model("Post", PostSchema);
+    Posts = mongoose.model("Posts", PostSchema);
     Comments = mongoose.model("Comment", CommentSchema);
     Users = mongoose.model("User", UserSchema)
 }

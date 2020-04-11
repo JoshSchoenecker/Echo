@@ -19,7 +19,9 @@ export default class PostController {
     console.log(formData);
     let newPostObject = {
       description : formData.textpost.value,
-      image : formData.imgUrl.value
+      image : formData.imgUrl.value,
+      username : store.State.user.id,
+      author : store.State.user.username
     }
     console.log(newPostObject);
     
