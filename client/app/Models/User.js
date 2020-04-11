@@ -7,6 +7,6 @@ export default class User {
   get userTemplate() {
     return /** html */ `
       
-    `;
+    `
   }
 }

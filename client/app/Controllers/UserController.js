@@ -24,29 +24,21 @@ export default class UserController {
       .queue([
         {
           title: "Create an Echo Account",
-          text: "What is your username?",
-        },
+          text: "What is your username?"
+        }
       ])
       .then((result) => {
         if (result.value) {
           let user = {
-            username: result.value.toString(),
+            username: result.value.toString()
           };
           // @ts-ignore
           Swal.fire({
             title: "Echo Account Created",
           });
+          console.log(user)
           _userService.create(user);
         }
       });
-
-    // let formData = event.target;
-    // console.log(formData);
-    // let newPostObject = {
-    //   text : formData.textpost.value,
-    //   imgUrl : formData.imgUrl.value
-    // }
-    // _postService.create(newPostObject)
-    // formData.reset()
   }
 }

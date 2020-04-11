@@ -1,12 +1,12 @@
 import PostSchema from "../models/Post";
 import CommentSchema from "../models/Comment";
-import UsernameSchema from "../models/Username";
+import UserSchema from "../models/User";
 import mongoose from "mongoose";
 
 class DbContext {
     Posts = mongoose.model("Post", PostSchema);
     Comments = mongoose.model("Comment", CommentSchema);
-    Usernames = mongoose.model("Username", UsernameSchema)
+    Users = mongoose.model("User", UserSchema)
 }
 
 export const dbContext = new DbContext();

@@ -11,6 +11,7 @@ class PostService {
     _api
       .post("", newPostObject)
       .then((res) => {
+        
         //NOTE two ways of handling updating our data
         //First way is adding the returned new car we created into our current cars array
         //pros: only one call to db (our post method) cons: we cant trust that our local array contains all the same information as our DB. Someone else could of added a car between our get and post request
