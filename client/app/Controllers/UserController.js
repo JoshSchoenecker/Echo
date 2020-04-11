@@ -1,5 +1,5 @@
 import store from "../store.js";
-import _userService from "../Services/PostService.js";
+import _userService from "../Services/UserService.js";
 
 //Private
 // @ts-ignore
@@ -11,35 +11,34 @@ function _draw() {
 //Public
 export default class UserController {
   constructor() {
-    // store.subscribe("User", _draw);
+    store.subscribe("user", _draw);
   }
 
   create() {
-    let userName = "";
     // @ts-ignore
     Swal.mixin({
-      input: 'text',
-      confirmButtonText: 'Next &rarr;',
-      showCancelButton: true
-    }).queue([
-      {
-        title: 'Create an Echo Account',
-        text: 'What is your username?'
-      },
-    ]).then((result) => {
-      if (result.value) {
-        userName = result.value.toString()
-        let user = {
-          username: userName
-        }
-        // @ts-ignore
-        Swal.fire({
-          title: 'Echo Account Created'
-        })
-        _userService.create(user)
-      }
+      input: "text",
+      confirmButtonText: "Next &rarr;",
+      showCancelButton: true,
     })
-
+      .queue([
+        {
+          title: "Create an Echo Account",
+          text: "What is your username?",
+        },
+      ])
+      .then((result) => {
+        if (result.value) {
+          let user = {
+            username: result.value.toString(),
+          };
+          // @ts-ignore
+          Swal.fire({
+            title: "Echo Account Created",
+          });
+          _userService.create(user);
+        }
+      });
 
     // let formData = event.target;
     // console.log(formData);
