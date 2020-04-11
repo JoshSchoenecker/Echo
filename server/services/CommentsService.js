@@ -1,7 +1,12 @@
 import { dbContext } from "../db/DbContext";
 import { BadRequest } from "../utils/Errors";
+import { query } from "express";
 
 class CommentsService {
+    async getCommentsByPostId(query = {}) {
+      let comments = await dbContext.Comments.find(query)
+      return comments
+    }
 
     async getAll(query = {}) {
         let comment = await dbContext.Comments.find(query);

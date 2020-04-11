@@ -18,7 +18,7 @@ let _state = {
 let _listeners = {
   activeValue: [],
   values: [],
-  post: [],
+  posts: [],
   user: []
 };
 

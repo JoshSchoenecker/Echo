@@ -3,14 +3,14 @@ import _postService from "../Services/PostService.js";
 
 //Private
 function _draw() {
-  let values = store.State.values;
-  console.log(values);
+  let posts = store.State.posts;
+  console.log(posts);
 }
 
 //Public
 export default class PostController {
   constructor() {
-    store.subscribe("Post", _draw);
+    store.subscribe("posts", _draw);
   }
 
   create(event) {

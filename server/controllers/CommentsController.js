@@ -8,9 +8,9 @@ export class CommentsController extends BaseController {
         super("api/comments");
         this.router
             .get("", this.getAll)
-            .get("/:postId", this.getById)
+            .get("/:commentId", this.getById)
             .post("", this.create)
-            .delete("/:postId", this.remove)
+            .delete("/:commentId", this.remove)
     }
     async getAll(req, res, next) {
         try {

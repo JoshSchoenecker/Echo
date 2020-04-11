@@ -14,4 +14,4 @@ const Post = new Schema(
   { timestamps: true, toJSON: { virtuals: true } }
 );
 
-export default Post; 
+export default Post;
