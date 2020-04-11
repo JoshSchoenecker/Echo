@@ -20,8 +20,7 @@ export default class UserController {
     Swal.mixin({
       input: 'text',
       confirmButtonText: 'Next &rarr;',
-      showCancelButton: true,
-      progressSteps: ['1']
+      showCancelButton: true
     }).queue([
       {
         title: 'Create an Echo Account',
