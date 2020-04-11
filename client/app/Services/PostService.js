@@ -1,4 +1,4 @@
-import store from "../store.js";
+import _store from "../store.js";
 import Post from "../Models/Post.js"
 
 // @ts-ignore axios
