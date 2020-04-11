@@ -12,22 +12,26 @@ class PostService {
     _api
       .post("", newPostObject)
       .then((res) => {
-        
-        //NOTE two ways of handling updating our data
-        //First way is adding the returned new car we created into our current cars array
-        //pros: only one call to db (our post method) cons: we cant trust that our local array contains all the same information as our DB. Someone else could of added a car between our get and post request
-
         let newPost = new Post(res.data);
-        store.State.posts.push(newPost);
-
-        // store.commit('posts', posts)
-        console.log(store.State.posts);
-        // let cars = [newCar, ..._store.State.cars]
-        // _store.commit('cars', cars)
-        //NOTE we could just call get cars again and it would handle getting all the cars and saving the state and redrawing.
-        // this.getCars()
+        let posts = [newPost, ...store.State.posts]
+        store.commit('posts', posts)
       })
       .catch((err) => console.error(err));
+  }
+
+  getPosts() {
+    _api
+      .get('')
+      .then((res) => {
+        let posts = res.data.map(post => new Post(post))
+        store.commit('posts', posts)
+        console.log(store.State.posts)
+      })
+      .catch((err) => console.error(err))
+  }
+
+  constructor() {
+    this.getPosts()
   }
 }
 
