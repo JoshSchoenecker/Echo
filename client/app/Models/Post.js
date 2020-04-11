@@ -6,9 +6,9 @@ export default class Post{
     this.description = data.description
     // TODO find a way to grab current username
     // this.author = data.author
-    this.image = data.image
-    this.supportCount = data.supportCount
-    this.disregardCount = data.disregardCount
+    this.image = data.image || ""
+    this.supportCount = data.supportCount || 0
+    this.disregardCount = data.disregardCount || 0
   }
 
   get template() {
