@@ -1,9 +1,10 @@
 import _store from "../store.js";
 import Post from "../Models/Post.js";
+import store from "../store.js";
 
 // @ts-ignore axios
 let _api = axios.create({
-  baseURL: "localhost:3000/api/posts",
+  baseURL: "//localhost:3000/api/posts",
   timeout: 8000,
 });
 class PostService {
@@ -16,8 +17,11 @@ class PostService {
         //First way is adding the returned new car we created into our current cars array
         //pros: only one call to db (our post method) cons: we cant trust that our local array contains all the same information as our DB. Someone else could of added a car between our get and post request
 
-        let newPost = new Post(res);
-        console.log(newPost);
+        let newPost = new Post(res.data);
+        store.State.posts.push(newPost);
+
+        // store.commit('posts', posts)
+        console.log(store.State.posts);
         // let cars = [newCar, ..._store.State.cars]
         // _store.commit('cars', cars)
         //NOTE we could just call get cars again and it would handle getting all the cars and saving the state and redrawing.

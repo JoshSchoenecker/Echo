@@ -18,9 +18,10 @@ export default class PostController {
     let formData = event.target;
     console.log(formData);
     let newPostObject = {
-      user : store.State.user,
       description : formData.textpost.value,
-      image : formData.imgUrl.value
+      image : formData.imgUrl.value,
+      username : store.State.user.id,
+      author : store.State.user.username
     }
     _postService.create(newPostObject)
     formData.reset()

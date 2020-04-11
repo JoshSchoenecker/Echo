@@ -1,11 +1,9 @@
 import store from "../store.js"
 export default class Post{
   constructor(data){
-    this.username = store.State.user.id
-    this.author = store.State.user.username
+    this.username = data.username
+    this.author = data.author
     this.description = data.description
-    // TODO find a way to grab current username
-    // this.author = data.author
     this.image = data.image
     this.supportCount = data.supportCount
     this.disregardCount = data.disregardCount
