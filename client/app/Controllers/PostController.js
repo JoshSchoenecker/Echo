@@ -5,6 +5,7 @@ import _postService from "../Services/PostService.js";
 function _draw() {
   let posts = store.State.posts;
   console.log(posts);
+  
 }
 
 //Public
