@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Echo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!--Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Pacifico&family=Cedarville+Cursive&family=Sanchez&display=swap"
+      rel="stylesheet"
+    />
+    <!--FontAwesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="client/assets/style.css" />
+  </head>
+
+  <body class="container-fluid">
+    <header class="row mt-3">
+      <div class="col-4 text-left font-pacifico mr-auto"><h1>Echo</h1></div>
+      <form class="col-2" onsubmit="">
+        <div class="form-group">
+          <input
+            type="text"
+            name="description"
+            class="form-control my-auto"
+            placeholder="Username"
+            aria-describedby="helpId"
+          />
+          <button class="btn" type="submit">Submit</button>
+        </div>
+      </form>
+    </header>
+
+
+    <main>
+    <div class="row">
+
+          <!-- Card-->
+          <div class="shadow col-12 col-md-4 mx-auto card card-cascade font-gothic my-2">
+            <!-- Card image -->
+            <div class="view view-cascade overlay">
+              <img
+                id="image"
+                class="card-img-top img-fluid mt-3 shadow"
+                src="https://mdbootstrap.com/img/Photos/Others/men.jpg"
+                alt="Card image cap"
+              />
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+
+            <!-- Card content -->
+            <div class="card-body card-body-cascade text-center">
+              <!-- username? -->
+              <h6 id="username" class="font-weight-bold indigo-text pb-2">Username</h6>
+              <!-- Text -->
+
+              <!-- Title -->
+              <h4 class="card-title mb-4" id="echo">
+                <strong
+                  >This guy looks like he's trying to be cool but he really
+                  isn't.</strong
+                >
+              </h4>
+
+              <!--BUTTONS AREN'T sHOWING CAUSE NO FONTAWESOME YET-->
+              <!-- Support Button -->
+              <button class="btn btn-success font-cursive mr-4">support</button>
+              <button class="btn btn-danger font-cursive ml-4">disregard</button>
+            </div>
+
+            <!-- Card footer -->
+            <div class="text-muted text-center ">
+            <button id="discussion-button" class="btn btn-light mb-2" onclick="">Join the Discussion</button>            
+        </div>
+          </div>
+    </div>
+
+        <!--TEST CODE STARTS HERE-->
+
+        <!--TEST CODE ENDS HERE-->
+
+      </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!--Axios-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+            
+    <script src="app/main.js" type="module"></script>
+  </body>
+</html>

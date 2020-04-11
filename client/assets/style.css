@@ -1,1 +1,23 @@
 /* Styles */
+
+
+/*Fonts*/
+.font-pacifico{
+  font-family: 'Pacifico', cursive;
+}
+
+.font-sanchez{
+  font-family: 'Sanchez', serif;
+}
+
+.font-gothic{
+  font-family: 'Didact Gothic', sans-serif;
+}
+
+.font-cursive{
+  font-family: 'Cedarville Cursive', cursive;
+}
+
+.hidden{
+  display: none;
+}

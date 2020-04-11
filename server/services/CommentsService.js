@@ -1,11 +1,16 @@
 import { dbContext } from "../db/DbContext";
 import { BadRequest } from "../utils/Errors";
+import { query } from "express";
 
 class CommentsService {
+    async getCommentsByPostId(query = {}) {
+        let comments = await dbContext.Comments.find(query)
+        return comments
+    }
 
     async getAll(query = {}) {
-        let comments = await dbContext.Comments.find(query);
-        return comments;
+        let comment = await dbContext.Comments.find(query);
+        return comment;
     }
 
     async create(body) {
@@ -21,8 +26,8 @@ class CommentsService {
         return comment
     }
 
-    async remove(postId) {
-        let comment = await dbContext.Comments.findByIdAndDelete(postId)
+    async remove(commentId) {
+        let comment = await dbContext.Comments.findByIdAndDelete(commentId)
         return comment
     }
 }

@@ -1,9 +1,15 @@
 import Value from "./Models/Value.js";
+import User from "./Models/User.js";
+import Post from "./Models/Post.js";
 
 let _state = {
   activeValue: new Value({ title: "Value" }),
   /** @type {Value[]} */
-  values: []
+  values: [],
+  /** @type {Post[]} */
+  posts: [],
+  /** @type {User} */
+  user: new User({ username: "" }),
 };
 
 /** Collection of listeners to be called based on keyed state changes
@@ -11,7 +17,9 @@ let _state = {
  */
 let _listeners = {
   activeValue: [],
-  values: []
+  values: [],
+  posts: [],
+  user: [],
 };
 
 //NOTE You should not need to change the code from this point down
@@ -65,7 +73,7 @@ class Store {
   commit(prop, data) {
     _validateProp(prop);
     _state[prop] = data;
-    _listeners[prop].forEach(fn => fn());
+    _listeners[prop].forEach((fn) => fn());
   }
 }
 

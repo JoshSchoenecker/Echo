@@ -1,4 +1,4 @@
-import express from "express";
+import express, { request } from "express";
 import BaseController from "../utils/BaseController";
 import { commentsService } from "../services/CommentsService";
 import { BadRequest } from "../utils/Errors";
@@ -8,9 +8,9 @@ export class CommentsController extends BaseController {
         super("api/comments");
         this.router
             .get("", this.getAll)
-            .get("/:postId", this.getById)
+            .get("/:commentId", this.getById)
             .post("", this.create)
-            .delete("/:postId", this.remove)
+            .delete("/:commentId", this.remove)
     }
     async getAll(req, res, next) {
         try {
