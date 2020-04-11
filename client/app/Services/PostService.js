@@ -18,6 +18,8 @@ class PostService {
         //pros: only one call to db (our post method) cons: we cant trust that our local array contains all the same information as our DB. Someone else could of added a car between our get and post request
 
         let newPost = new Post(res.data);
+        console.log("newPost", newPost);
+        
         store.State.posts.push(newPost);
 
         // store.commit('posts', posts)
