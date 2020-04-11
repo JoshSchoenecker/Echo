@@ -1,7 +1,6 @@
 export default class Post{
   constructor(data){
     this.username = data.username
-    this.title = data.title
     this.description = data.description
     // TODO find a way to grab current username
     // this.author = data.author

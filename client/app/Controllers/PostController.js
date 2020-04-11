@@ -5,6 +5,7 @@ import _postService from "../Services/PostService.js";
 function _draw() {
   let posts = store.State.posts;
   console.log(posts);
+  
 }
 
 //Public
@@ -18,6 +19,7 @@ export default class PostController {
     let formData = event.target;
     console.log(formData);
     let newPostObject = {
+
       description : formData.textpost.value,
       image : formData.imgUrl.value
     }
