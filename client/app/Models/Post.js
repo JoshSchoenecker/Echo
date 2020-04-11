@@ -40,6 +40,10 @@ export default class Post{
       <!-- Support Button -->
       <button class="btn btn-success font-cursive mr-4" onclick="">support</button>
       <button class="btn btn-danger font-cursive ml-4" onclick="">disregard</button>
+      <div>
+      <span class="font-gothic text-success mr-5">${this.supportCount}</span>
+      <span class="font-gothic text-danger ml-5">${this.disregardCount}</span>
+            </div>
     </div>
 
     <!-- Card footer -->
