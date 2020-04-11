@@ -1,6 +1,8 @@
+import store from "../store.js"
 export default class Post{
   constructor(data){
-    this.username = data.username
+    this.username = store.State.user.id
+    this.author = store.State.user.username
     this.description = data.description
     // TODO find a way to grab current username
     // this.author = data.author
