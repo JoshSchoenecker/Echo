@@ -4,7 +4,7 @@ import Post from "../Models/Post.js";
 // @ts-ignore axios
 let _api = axios.create({
   baseURL: "localhost:3000/api/posts",
-  timeout: 3000,
+  timeout: 8000,
 });
 class PostService {
   create(newPostObject) {
