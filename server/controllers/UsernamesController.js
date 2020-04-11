@@ -7,6 +7,7 @@ export class UsernamesController extends BaseController {
     constructor(){
         super("api/usernames")
         this.router
+        .post('', this.create)
     } 
 
 

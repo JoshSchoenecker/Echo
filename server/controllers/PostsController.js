@@ -2,6 +2,7 @@ import express from "express";
 import BaseController from "../utils/BaseController";
 import { postsService } from "../services/PostsService";
 import { BadRequest } from "../utils/Errors";
+import {commentsService} from '../services/CommentsService'
 
 export class PostsController extends BaseController {
   constructor() {
@@ -9,6 +10,7 @@ export class PostsController extends BaseController {
     this.router
       .get("", this.getAll)
       .get("/:postId", this.getById)
+      .get("/:postId/comments", this.getCommentsByPostId)
       .post("", this.create)
       .put("/:postId", this.edit)
       .delete("/:postId", this.remove)
@@ -58,5 +60,16 @@ export class PostsController extends BaseController {
     } catch (error){
       next(error)
     }
+  }
+
+  async getCommentsByPostId(req, res, next) {
+    try {
+      let comments = await commentsService.getCommentsByPostId()
+      if(!comments){
+        throw new BadRequest('Invalid Post Id or no comments on this post!')}
+      res.send(comments)
+    }
+    catch(error){
+    next(error)}
   }
 }
