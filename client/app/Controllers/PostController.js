@@ -5,6 +5,9 @@ import _postService from "../Services/PostService.js";
 function _draw() {
   let posts = store.State.posts;
   console.log("getting posts", posts);
+  let template =""
+  posts.forEach(post => template += post.template)
+  document.getElementById("post-space").innerHTML = template
 }
 
 //Public
