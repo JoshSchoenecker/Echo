@@ -1,10 +1,13 @@
 import Value from "./Models/Value.js";
 import User from "./Models/User.js";
+import Post from "./Models/Post.js";
 
 let _state = {
   activeValue: new Value({ title: "Value" }),
   /** @type {Value[]} */
   values: [],
+  /** @type {Post[]} */
+  posts: [],
   /** @type {User} */
   user: new User({ name: '' })
 };
@@ -15,6 +18,7 @@ let _state = {
 let _listeners = {
   activeValue: [],
   values: [],
+  post: [],
   user: []
 };
 
