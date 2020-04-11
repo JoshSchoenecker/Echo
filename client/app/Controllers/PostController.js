@@ -23,6 +23,8 @@ export default class PostController {
       username : store.State.user.id,
       author : store.State.user.username
     }
+    console.log(newPostObject);
+    
     _postService.create(newPostObject)
     formData.reset()
   }

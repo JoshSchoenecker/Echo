@@ -4,9 +4,9 @@ export default class Post{
     this.username = data.username
     this.author = data.author
     this.description = data.description
-    this.image = data.image
-    this.supportCount = data.supportCount
-    this.disregardCount = data.disregardCount
+    this.image = data.image || ""
+    this.supportCount = data.supportCount || 0
+    this.disregardCount = data.disregardCount || 0
   }
 
   get template() {
