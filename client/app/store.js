@@ -47,7 +47,21 @@ function _validateSubscriber(fn, prop) {
   }
 }
 
+function _loadState() {
+  let data = JSON.parse(localStorage.getItem("EchoUser"));
+  console.log(data)
+  if (data) {
+    let newUser = new User(data);
+    _state.user = newUser;
+  }
+}
+_loadState();
+
 class Store {
+
+  saveState() {
+    localStorage.setItem("EchoUser", JSON.stringify(_state.user));
+  }
   /**
    * Provides access to application state data
    */

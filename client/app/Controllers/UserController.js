@@ -1,11 +1,10 @@
 import store from "../store.js";
 import _userService from "../Services/UserService.js";
 
-//Private
 // @ts-ignore
 function _draw() {
-  let values = store.State.values;
-  console.log(values);
+  let user = store.State.user;
+  console.log(user);
 }
 
 //Public

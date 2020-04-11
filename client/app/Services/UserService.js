@@ -8,13 +8,16 @@ let _api = axios.create({
 });
 
 class UserService {
+
+  constructor() {
+  }
   create(newUser) {
     _api
       .post("", newUser)
       .then((res) => {
         let newUser = new User(res.data);
-        console.log(newUser);
         _store.commit("user", newUser);
+        _store.saveState()
         // let cars = [newCar, ..._store.State.cars]
         // _store.commit('cars', cars)
         //NOTE we could just call get cars again and it would handle getting all the cars and saving the state and redrawing.
@@ -22,6 +25,19 @@ class UserService {
       })
       .catch((err) => console.error(err));
   }
+
+  getUser() {
+    _api
+      .get('')
+      .then((res) => {
+        console.log(res.data)
+        let user = new User(res.data);
+        console.log(user)
+        _store.commit('user', user)
+      })
+      .catch((err) => console.error(err));
+  }
+
 }
 
 const service = new UserService();
